@@ -7,199 +7,61 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --orange:#f97316;
-  --dark:#0f172a;
-  --dark2:#1e293b;
-  --muted:#64748b;
-  --light:#f8fafc;
-  --border:#e2e8f0;
-}
+:root{--orange:#f97316;--dark:#0f172a;--dark2:#1e293b;--muted:#64748b;}
 body{font-family:'DM Sans',sans-serif;background:#0f172a;color:#fff;overflow-x:hidden}
 
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:14px 32px;
-  background:rgba(15,23,42,0.85);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(255,255,255,0.06);
-}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:#fff}
-.nav-logo span{color:#f97316}
-.nav-cta{
-  background:#f97316;color:#fff;
-  font-size:12px;font-weight:600;
-  padding:8px 18px;border-radius:8px;
-  border:none;cursor:pointer;
-  font-family:'DM Sans',sans-serif;
-  transition:background 0.2s;
-  text-decoration:none;
-}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 32px;background:rgba(15,23,42,0.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);}
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.nav-logo-text{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:#fff}
+.nav-logo-text span{color:#f97316}
+.nav-cta{background:#f97316;color:#fff;font-size:12px;font-weight:600;padding:8px 18px;border-radius:8px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s;text-decoration:none;}
 .nav-cta:hover{background:#ea580c}
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;
-  padding:100px 24px 60px;
-  position:relative;
-  overflow:hidden;
-}
-.hero-bg{
-  position:absolute;inset:0;
-  background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(249,115,22,0.15) 0%, transparent 70%);
-  pointer-events:none;
-}
-.hero-grid{
-  position:absolute;inset:0;
-  background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
-  background-size:40px 40px;
-  pointer-events:none;
-}
-.live-badge{
-  display:inline-flex;align-items:center;gap:7px;
-  background:rgba(249,115,22,0.12);
-  border:1px solid rgba(249,115,22,0.3);
-  border-radius:999px;padding:6px 16px;
-  font-size:11.5px;color:#fb923c;font-weight:500;
-  margin-bottom:24px;
-}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 60px;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(249,115,22,0.15) 0%, transparent 70%);pointer-events:none;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
+.live-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(249,115,22,0.12);border:1px solid rgba(249,115,22,0.3);border-radius:999px;padding:6px 16px;font-size:11.5px;color:#fb923c;font-weight:500;margin-bottom:24px;}
 .live-dot{width:7px;height:7px;background:#f97316;border-radius:50%;animation:pulse 1.5s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
-.hero h1{
-  font-family:'Syne',sans-serif;
-  font-size:clamp(36px,7vw,68px);
-  font-weight:800;
-  line-height:1.1;
-  margin-bottom:16px;
-  letter-spacing:-0.02em;
-}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(36px,7vw,68px);font-weight:800;line-height:1.1;margin-bottom:16px;letter-spacing:-0.02em;}
 .hero h1 span{color:#f97316}
-.hero-sub{
-  font-size:clamp(14px,2.5vw,18px);
-  color:#94a3b8;
-  max-width:480px;
-  line-height:1.7;
-  margin-bottom:32px;
-}
-.hero-caption{
-  font-family:'Syne',sans-serif;
-  font-size:13px;font-weight:600;
-  color:#f97316;letter-spacing:0.08em;
-  text-transform:uppercase;
-  margin-bottom:32px;
-  opacity:0.9;
-}
-.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:48px}
-.btn-primary{
-  background:#f97316;color:#fff;
-  font-size:14px;font-weight:600;
-  padding:13px 28px;border-radius:10px;
-  border:none;cursor:pointer;
-  font-family:'DM Sans',sans-serif;
-  transition:all 0.2s;text-decoration:none;display:inline-block;
-}
+.hero-sub{font-size:clamp(14px,2.5vw,18px);color:#94a3b8;max-width:480px;line-height:1.7;margin-bottom:32px;}
+.hero-caption{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:#f97316;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:32px;opacity:0.9;}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.btn-primary{background:#f97316;color:#fff;font-size:14px;font-weight:600;padding:13px 28px;border-radius:10px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;text-decoration:none;display:inline-block;}
 .btn-primary:hover{background:#ea580c;transform:translateY(-1px)}
-.btn-outline{
-  background:transparent;color:#fff;
-  font-size:14px;font-weight:500;
-  padding:13px 28px;border-radius:10px;
-  border:1.5px solid rgba(255,255,255,0.2);
-  cursor:pointer;font-family:'DM Sans',sans-serif;
-  transition:all 0.2s;text-decoration:none;display:inline-block;
-}
+.btn-outline{background:transparent;color:#fff;font-size:14px;font-weight:500;padding:13px 28px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.2);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;text-decoration:none;display:inline-block;}
 .btn-outline:hover{border-color:rgba(255,255,255,0.5);transform:translateY(-1px)}
-.hero-tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.tag{
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:999px;padding:5px 14px;
-  font-size:12px;color:#94a3b8;
-}
+.hero-tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:14px;}
+.tag{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:999px;padding:5px 14px;font-size:12px;color:#94a3b8;}
+.insta-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.25);border-radius:999px;padding:6px 16px;font-size:12px;color:#fb923c;text-decoration:none;transition:all 0.2s;font-weight:500;}
+.insta-tag:hover{background:rgba(249,115,22,0.2);}
 
-/* FEATURES */
-.features{
-  padding:80px 24px;
-  max-width:960px;margin:0 auto;
-}
-.section-label{
-  font-size:11px;font-weight:700;letter-spacing:0.12em;
-  text-transform:uppercase;color:#f97316;
-  margin-bottom:12px;
-}
-.section-title{
-  font-family:'Syne',sans-serif;
-  font-size:clamp(24px,4vw,36px);font-weight:700;
-  margin-bottom:48px;line-height:1.2;
-}
-.feat-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:16px;
-}
-.feat-card{
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:14px;padding:24px;
-  transition:all 0.2s;
-}
-.feat-card:hover{
-  background:rgba(249,115,22,0.06);
-  border-color:rgba(249,115,22,0.2);
-  transform:translateY(-2px);
-}
+.features{padding:80px 24px;max-width:960px;margin:0 auto;}
+.section-label{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#f97316;margin-bottom:12px;}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(24px,4vw,36px);font-weight:700;margin-bottom:48px;line-height:1.2;}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+.feat-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:24px;transition:all 0.2s;}
+.feat-card:hover{background:rgba(249,115,22,0.06);border-color:rgba(249,115,22,0.2);transform:translateY(-2px);}
 .feat-icon{font-size:28px;margin-bottom:14px}
 .feat-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px}
 .feat-desc{font-size:13px;color:#64748b;line-height:1.6}
 
-/* INFO STRIP */
-.info-strip{
-  background:rgba(249,115,22,0.08);
-  border-top:1px solid rgba(249,115,22,0.15);
-  border-bottom:1px solid rgba(249,115,22,0.15);
-  padding:28px 24px;
-  display:flex;gap:32px;justify-content:center;flex-wrap:wrap;
-}
+.info-strip{background:rgba(249,115,22,0.08);border-top:1px solid rgba(249,115,22,0.15);border-bottom:1px solid rgba(249,115,22,0.15);padding:28px 24px;display:flex;gap:32px;justify-content:center;flex-wrap:wrap;}
 .info-item{text-align:center}
 .info-val{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#f97316}
 .info-key{font-size:11px;color:#64748b;margin-top:3px;text-transform:uppercase;letter-spacing:0.07em}
 
-/* FORM SECTION */
-.form-section{
-  padding:80px 24px;
-  max-width:600px;margin:0 auto;
-}
-.form-card{
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:20px;
-  overflow:hidden;
-}
-.form-card-header{
-  background:rgba(249,115,22,0.1);
-  border-bottom:1px solid rgba(249,115,22,0.15);
-  padding:24px 28px;
-}
+.form-section{padding:80px 24px;max-width:600px;margin:0 auto;}
+.form-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:20px;overflow:hidden;}
+.form-card-header{background:rgba(249,115,22,0.1);border-bottom:1px solid rgba(249,115,22,0.15);padding:24px 28px;}
 .form-card-header h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:4px}
 .form-card-header p{font-size:13px;color:#64748b}
 .form-body-inner{padding:28px}
 .field{margin-bottom:16px}
 .field label{display:block;font-size:12px;font-weight:500;color:#94a3b8;margin-bottom:6px;letter-spacing:0.04em}
 .field label span{color:#f97316}
-.field input,.field textarea,.field select{
-  width:100%;
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:9px;
-  padding:10px 14px;
-  font-size:13.5px;color:#fff;
-  font-family:'DM Sans',sans-serif;
-  outline:none;
-  transition:border-color 0.15s;
-}
+.field input,.field textarea,.field select{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:9px;padding:10px 14px;font-size:13.5px;color:#fff;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.15s;}
 .field input::placeholder,.field textarea::placeholder{color:#475569}
 .field input:focus,.field textarea:focus,.field select:focus{border-color:#f97316;background:rgba(249,115,22,0.05)}
 .field select option{background:#1e293b;color:#fff}
@@ -207,36 +69,46 @@ nav{
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .divider{height:1px;background:rgba(255,255,255,0.06);margin:20px 0}
 .field-section{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#f97316;margin-bottom:14px}
-.wa-btn{
-  width:100%;
-  background:#25d366;color:#fff;
-  font-size:14px;font-weight:700;
-  padding:14px;border-radius:10px;
-  border:none;cursor:pointer;
-  font-family:'Syne',sans-serif;
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  transition:all 0.2s;margin-top:8px;
-}
+.wa-btn{width:100%;background:#25d366;color:#fff;font-size:14px;font-weight:700;padding:14px;border-radius:10px;border:none;cursor:pointer;font-family:'Syne',sans-serif;display:flex;align-items:center;justify-content:center;gap:10px;transition:all 0.2s;margin-top:8px;}
 .wa-btn:hover{background:#1db954;transform:translateY(-1px)}
-.wa-icon{font-size:18px}
 .form-note{font-size:11px;color:#475569;text-align:center;margin-top:10px}
 
-/* FOOTER */
-footer{
-  border-top:1px solid rgba(255,255,255,0.06);
-  padding:28px 24px;text-align:center;
-}
-footer p{font-size:12px;color:#475569}
+footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 24px;text-align:center;}
+footer p{font-size:12px;color:#475569;margin-bottom:6px;}
 footer span{color:#f97316}
+.footer-insta{display:inline-flex;align-items:center;gap:5px;color:#fb923c;text-decoration:none;font-size:13px;font-weight:500;margin:8px 0;transition:opacity 0.2s;}
+.footer-insta:hover{opacity:0.8;}
 </style>
 </head>
 <body>
 
+<!-- NAV with Logo -->
 <nav>
-  <div class="nav-logo">Safe<span>Store</span></div>
+  <div class="nav-logo">
+    <svg width="36" height="36" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="nb" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1a0a00"/><stop offset="100%" style="stop-color:#0f172a"/></linearGradient>
+        <linearGradient id="nt" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#fdba74"/><stop offset="100%" style="stop-color:#f97316"/></linearGradient>
+        <linearGradient id="nf" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#f97316"/><stop offset="100%" style="stop-color:#c2410c"/></linearGradient>
+        <linearGradient id="ns" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#ea580c"/><stop offset="100%" style="stop-color:#9a3412"/></linearGradient>
+      </defs>
+      <circle cx="200" cy="200" r="200" fill="url(#nb)"/>
+      <circle cx="200" cy="200" r="190" fill="none" stroke="#f97316" stroke-width="10"/>
+      <polygon points="200,85 290,128 200,171 110,128" fill="url(#nt)"/>
+      <polygon points="110,128 110,230 200,273 200,171" fill="url(#nf)"/>
+      <polygon points="290,128 290,230 200,273 200,171" fill="url(#ns)"/>
+      <line x1="200" y1="85" x2="200" y2="171" stroke="#fff" stroke-width="2" opacity="0.2"/>
+      <rect x="152" y="182" width="34" height="28" rx="5" fill="#fff" opacity="0.15"/>
+      <path d="M159 182 Q159 170 169 170 Q179 170 179 182" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity="0.65"/>
+      <circle cx="169" cy="196" r="4" fill="#fff" opacity="0.85"/>
+      <line x1="169" y1="196" x2="169" y2="204" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+    </svg>
+    <div class="nav-logo-text">Safe<span>Store</span></div>
+  </div>
   <a class="nav-cta" href="https://wa.me/919334102397" target="_blank">📲 WhatsApp Us</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
@@ -254,8 +126,10 @@ footer span{color:#f97316}
     <span class="tag">🔒 Locked Flat</span>
     <span class="tag">⚡ Limited Spots</span>
   </div>
+  <a class="insta-tag" href="https://instagram.com/safestore.noida" target="_blank">📸 Follow us @safestore.noida</a>
 </section>
 
+<!-- INFO STRIP -->
 <div class="info-strip">
   <div class="info-item"><div class="info-val">1+</div><div class="info-key">Min. Months</div></div>
   <div class="info-item"><div class="info-val">100%</div><div class="info-key">Safe & Secure</div></div>
@@ -263,143 +137,70 @@ footer span{color:#f97316}
   <div class="info-item"><div class="info-val">₹ Flex</div><div class="info-key">Negotiable Price</div></div>
 </div>
 
+<!-- FEATURES -->
 <section class="features">
   <div class="section-label">Why choose us</div>
   <div class="section-title">Everything your stuff needs 📦</div>
   <div class="feat-grid">
-    <div class="feat-card">
-      <div class="feat-icon">🔒</div>
-      <div class="feat-title">Secure Storage</div>
-      <div class="feat-desc">Locked residential flat — your items are always safe and monitored.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">📦</div>
-      <div class="feat-title">All Items Welcome</div>
-      <div class="feat-desc">Bags, boxes, mattress, electronics — we accept all kinds of items.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">🕐</div>
-      <div class="feat-title">Flexible Timing</div>
-      <div class="feat-desc">Drop off and pick up your belongings at a time that suits you.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">💰</div>
-      <div class="feat-title">Affordable Price</div>
-      <div class="feat-desc">Very reasonable rates — negotiable based on quantity of items.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">🏠</div>
-      <div class="feat-title">Safe Location</div>
-      <div class="feat-desc">Located in a safe residential area in Noida Sector 75.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">🤝</div>
-      <div class="feat-title">Verified & Trusted</div>
-      <div class="feat-desc">Responsible and verified handling — your belongings are in good hands.</div>
-    </div>
+    <div class="feat-card"><div class="feat-icon">🔒</div><div class="feat-title">Secure Storage</div><div class="feat-desc">Locked residential flat — your items are always safe and monitored.</div></div>
+    <div class="feat-card"><div class="feat-icon">📦</div><div class="feat-title">All Items Welcome</div><div class="feat-desc">Bags, boxes, mattress, electronics — we accept all kinds of items.</div></div>
+    <div class="feat-card"><div class="feat-icon">🕐</div><div class="feat-title">Flexible Timing</div><div class="feat-desc">Drop off and pick up your belongings at a time that suits you.</div></div>
+    <div class="feat-card"><div class="feat-icon">💰</div><div class="feat-title">Affordable Price</div><div class="feat-desc">Very reasonable rates — negotiable based on quantity of items.</div></div>
+    <div class="feat-card"><div class="feat-icon">🏠</div><div class="feat-title">Safe Location</div><div class="feat-desc">Located in a safe residential area in Noida Sector 75.</div></div>
+    <div class="feat-card"><div class="feat-icon">🤝</div><div class="feat-title">Verified & Trusted</div><div class="feat-desc">Responsible and verified handling — your belongings are in good hands.</div></div>
   </div>
 </section>
 
+<!-- FORM -->
 <section class="form-section" id="book">
   <div class="section-label" style="text-align:center;margin-bottom:10px">Book Now</div>
   <div class="section-title" style="text-align:center;margin-bottom:28px">Fill the form & we'll<br>reach out on WhatsApp 💬</div>
-
   <div class="form-card">
     <div class="form-card-header">
       <h3>📋 Storage Booking Form</h3>
       <p>Fill in your details — we'll contact you within a few hours</p>
     </div>
     <div class="form-body-inner">
-
       <div class="field-section">Personal Details</div>
-      <div class="field">
-        <label>Full Name <span>*</span></label>
-        <input type="text" id="f-name" placeholder="Enter your full name"/>
-      </div>
+      <div class="field"><label>Full Name <span>*</span></label><input type="text" id="f-name" placeholder="Enter your full name"/></div>
       <div class="two-col">
-        <div class="field">
-          <label>Phone No. <span>*</span></label>
-          <input type="tel" id="f-phone" placeholder="+91 XXXXX XXXXX"/>
-        </div>
-        <div class="field">
-          <label>WhatsApp No.</label>
-          <input type="tel" id="f-wa" placeholder="If different"/>
-        </div>
+        <div class="field"><label>Phone No. <span>*</span></label><input type="tel" id="f-phone" placeholder="+91 XXXXX XXXXX"/></div>
+        <div class="field"><label>WhatsApp No.</label><input type="tel" id="f-wa" placeholder="If different"/></div>
       </div>
-      <div class="field">
-        <label>Address / Room / Flat No. <span>*</span></label>
-        <input type="text" id="f-addr" placeholder="Hostel name, flat no., building..."/>
-      </div>
-      <div class="field">
-        <label>College / Society Name</label>
-        <input type="text" id="f-college" placeholder="Your college or society"/>
-      </div>
-
+      <div class="field"><label>Address / Room / Flat No. <span>*</span></label><input type="text" id="f-addr" placeholder="Hostel name, flat no., building..."/></div>
+      <div class="field"><label>College / Society Name</label><input type="text" id="f-college" placeholder="Your college or society"/></div>
       <div class="divider"></div>
       <div class="field-section">Storage Details</div>
       <div class="two-col">
-        <div class="field">
-          <label>Start Date <span>*</span></label>
-          <input type="date" id="f-start"/>
-        </div>
-        <div class="field">
-          <label>End Date <span>*</span></label>
-          <input type="date" id="f-end"/>
-        </div>
+        <div class="field"><label>Start Date <span>*</span></label><input type="date" id="f-start"/></div>
+        <div class="field"><label>End Date <span>*</span></label><input type="date" id="f-end"/></div>
       </div>
-      <div class="field">
-        <label>Duration</label>
-        <select id="f-dur">
-          <option value="">Select duration</option>
-          <option>1 Month</option>
-          <option>2 Months</option>
-          <option>3 Months</option>
-          <option>More than 3 Months</option>
-        </select>
+      <div class="field"><label>Duration</label>
+        <select id="f-dur"><option value="">Select duration</option><option>1 Month</option><option>2 Months</option><option>3 Months</option><option>More than 3 Months</option></select>
       </div>
-
       <div class="divider"></div>
       <div class="field-section">Items Details</div>
-      <div class="field">
-        <label>Items to Store <span>*</span></label>
-        <textarea id="f-items" placeholder="e.g. 2 bags, 1 mattress, 1 box of books, fan..."></textarea>
-      </div>
+      <div class="field"><label>Items to Store <span>*</span></label><textarea id="f-items" placeholder="e.g. 2 bags, 1 mattress, 1 box of books, fan..."></textarea></div>
       <div class="two-col">
-        <div class="field">
-          <label>Total Items (approx.)</label>
-          <select id="f-qty">
-            <option value="">Select</option>
-            <option>1–2 items</option>
-            <option>3–5 items</option>
-            <option>6–10 items</option>
-            <option>10+ items</option>
-          </select>
+        <div class="field"><label>Total Items (approx.)</label>
+          <select id="f-qty"><option value="">Select</option><option>1–2 items</option><option>3–5 items</option><option>6–10 items</option><option>10+ items</option></select>
         </div>
-        <div class="field">
-          <label>Breakable Items?</label>
-          <select id="f-break">
-            <option value="">Select</option>
-            <option>Yes</option>
-            <option>No</option>
-          </select>
+        <div class="field"><label>Breakable Items?</label>
+          <select id="f-break"><option value="">Select</option><option>Yes</option><option>No</option></select>
         </div>
       </div>
-      <div class="field">
-        <label>Additional Notes</label>
-        <textarea id="f-notes" placeholder="Any special instructions..." style="min-height:60px"></textarea>
-      </div>
-
-      <button class="wa-btn" onclick="sendToWhatsApp()">
-        <span class="wa-icon">💬</span> Submit & Contact on WhatsApp
-      </button>
+      <div class="field"><label>Additional Notes</label><textarea id="f-notes" placeholder="Any special instructions..." style="min-height:60px"></textarea></div>
+      <button class="wa-btn" onclick="sendToWhatsApp()">💬 Submit & Contact on WhatsApp</button>
       <p class="form-note">By clicking, you'll be redirected to WhatsApp with your details pre-filled</p>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <p>📍 <span>Noida Sector 75</span> &nbsp;·&nbsp; 📲 <span>93341 02397</span> &nbsp;·&nbsp; 🏠 <span>SafeStore</span></p>
-  <p style="margin-top:6px">© 2025 SafeStore · Your Belongings, Our Responsibility</p>
+  <div><a class="footer-insta" href="https://instagram.com/safestore.noida" target="_blank">📸 @safestore.noida</a></div>
+  <p style="margin-top:10px">© 2025 SafeStore · Your Belongings, Our Responsibility</p>
 </footer>
 
 <script>
@@ -416,12 +217,7 @@ function sendToWhatsApp() {
   const qty = document.getElementById('f-qty').value;
   const brk = document.getElementById('f-break').value;
   const notes = document.getElementById('f-notes').value.trim();
-
-  if (!name || !phone || !addr || !items) {
-    alert('Please fill in all required fields (marked with *)');
-    return;
-  }
-
+  if (!name || !phone || !addr || !items) { alert('Please fill in all required fields (marked with *)'); return; }
   const msg =
 `📦 *STORAGE BOOKING REQUEST*
 _Your Belongings, Our Responsibility_
@@ -444,12 +240,10 @@ _Your Belongings, Our Responsibility_
 ▸ Breakable Items: ${brk || 'N/A'}
 ▸ Notes: ${notes || 'None'}
 
-📍 Noida Sector 75`;
-
-  const encoded = encodeURIComponent(msg);
-  window.open(`https://wa.me/919334102397?text=${encoded}`, '_blank');
+📍 Noida Sector 75
+📸 @safestore.noida`;
+  window.open(`https://wa.me/919334102397?text=${encodeURIComponent(msg)}`, '_blank');
 }
 </script>
-
 </body>
 </html>
